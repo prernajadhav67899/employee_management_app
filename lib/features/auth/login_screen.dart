@@ -47,7 +47,6 @@ class _LoginScreenState extends State<LoginScreen> {
       _errorMessage = error;
     });
 
-    // On success the AuthWrapper swaps the screen automatically.
   }
 
   void _handleLogin() {

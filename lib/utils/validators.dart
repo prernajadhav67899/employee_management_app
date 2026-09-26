@@ -1,7 +1,3 @@
-/// Shared form validators. The auth and employee-form screens
-/// currently have their own inline copies of these — safe to swap
-/// those for calls into this file when you get a spare moment,
-/// but not required for the app to run.
 class Validators {
   Validators._();
 

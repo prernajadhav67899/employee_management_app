@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
-/// Centralized text styles. Pass [isDark] where the color needs to
-/// adapt to the current theme (most call sites will use
-/// Theme.of(context).textTheme after this is wired into ThemeData,
-/// but these are handy for direct use too).
 class AppTextStyles {
   AppTextStyles._();
 

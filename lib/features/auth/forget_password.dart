@@ -10,9 +10,6 @@ import '../../utils/validators.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_textfields.dart';
 
-/// Sends a Firebase password-reset email. On success it shows a
-/// confirmation state rather than navigating away, so the user can
-/// see the email went out before returning to Login.
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
 

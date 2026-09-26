@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Central place for icons so swapping an icon set later
-/// (e.g. to a custom icon font) touches one file.
+
 class AppIcons {
   AppIcons._();
 

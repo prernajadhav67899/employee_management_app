@@ -20,8 +20,6 @@ import 'providers/employee_provider.dart';
 import 'services/api_client.dart';
 import 'utils/app_routes.dart';
 
-/// Theme mode, persisted to SharedPreferences so the choice
-/// survives a restart.
 class ThemeController {
   ThemeController._();
 

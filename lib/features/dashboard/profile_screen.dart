@@ -9,8 +9,6 @@ import '../../constants/app_sizes.dart';
 import '../../main.dart';
 import '../../widgets/custom_button.dart';
 
-/// Shows the signed-in user's name, email and profile photo,
-/// plus the theme toggle and logout.
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -42,7 +40,6 @@ class ProfileScreen extends StatelessWidget {
     if (confirmed != true) return;
 
     await auth.logout();
-    // AuthWrapper sits at the first route and swaps to Login itself.
     navigator.popUntil((route) => route.isFirst);
   }
 

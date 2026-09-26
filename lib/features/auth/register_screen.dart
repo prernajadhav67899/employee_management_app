@@ -60,7 +60,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
-    // Pop back to the AuthWrapper, which now sees an authenticated user.
     navigator.popUntil((route) => route.isFirst);
   }
 

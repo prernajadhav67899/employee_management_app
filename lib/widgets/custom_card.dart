@@ -5,9 +5,6 @@ import '../constants/app_colors.dart';
 import '../constants/app_sizes.dart';
 import '../data/models/employee_model.dart';
 
-/// Card representing a single employee in the dashboard list.
-/// Tapping opens the detail screen; the trailing menu offers
-/// Edit/Delete directly from the list.
 class CustomCard extends StatelessWidget {
   final Employee employee;
   final VoidCallback onTap;

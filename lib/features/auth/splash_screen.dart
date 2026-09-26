@@ -4,8 +4,6 @@ import 'package:provider/provider.dart';
 import '../dashboard/employee_list_screen.dart';
 import 'login_screen.dart';
 
-/// Decides the first screen from the Firebase auth state, so a
-/// signed-in user skips Login on relaunch.
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({super.key});
 

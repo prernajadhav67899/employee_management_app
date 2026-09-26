@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sizes.dart';
 
-
-/// Shown while data is loading (list fetch, submit in progress, etc).
 class LoadingWidget extends StatelessWidget {
   final String? message;
   const LoadingWidget({super.key, this.message});

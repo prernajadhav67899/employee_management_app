@@ -6,11 +6,11 @@ import '../../constants/app_sizes.dart';
 import '../../data/models/employee_model.dart';
 import '../../widgets/custom_button.dart';
 
-/// Read-only view of a single employee, with Edit/Delete actions.
 class EmployeeDetailScreen extends StatelessWidget {
   final Employee employee;
   final VoidCallback? onEdit;
-  final VoidCallback? onDelete;
+
+  final Future<void> Function()? onDelete;
 
   const EmployeeDetailScreen({
     super.key,
@@ -19,26 +19,32 @@ class EmployeeDetailScreen extends StatelessWidget {
     this.onDelete,
   });
 
-  void _confirmDelete(BuildContext context) {
-    showDialog(
+  Future<void> _confirmDelete(BuildContext context) async {
+    final confirmed = await showDialog<bool>(
       context: context,
-      builder: (context) => AlertDialog(
+      builder: (dialogContext) => AlertDialog(
         title: const Text('Delete Employee'),
         content: Text('Are you sure you want to delete ${employee.name}? This cannot be undone.'),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
           TextButton(
-            onPressed: () {
-              Navigator.pop(context); // close dialog
-              Navigator.pop(context); // leave detail screen
-              // TODO: replace with EmployeeProvider.deleteEmployee(employee.id)
-              onDelete?.call();
-            },
+            onPressed: () => Navigator.pop(dialogContext, false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext, true),
             child: const Text('Delete', style: TextStyle(color: AppColors.error)),
           ),
         ],
       ),
     );
+
+    if (confirmed != true) return;
+    if (!context.mounted) return;
+
+    await onDelete?.call();
+
+    if (!context.mounted) return;
+    Navigator.pop(context); // leave detail screen, exactly once
   }
 
   Widget _infoRow(BuildContext context, IconData icon, String label, String value) {
@@ -80,7 +86,6 @@ class EmployeeDetailScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(AppIcons.edit),
             onPressed: onEdit,
-            // TODO: Navigator.push to EmployeeFormScreen(editEmployee: employee)
           ),
           IconButton(
             icon: const Icon(AppIcons.delete, color: AppColors.error),

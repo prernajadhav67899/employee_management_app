@@ -4,7 +4,6 @@ import '../constants/app_colors.dart';
 import '../constants/app_icons.dart';
 import '../constants/app_sizes.dart';
 
-/// Shown when a list/search/filter returns no results.
 class EmptyWidget extends StatelessWidget {
   final String message;
   final IconData icon;

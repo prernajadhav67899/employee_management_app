@@ -10,9 +10,6 @@ import '../../utils/validators.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_textfields.dart';
 
-/// Add / Edit employee form. In edit mode the fields are
-/// pre-populated from [editEmployee] and the save call routes to
-/// PUT instead of POST.
 class EmployeeFormScreen extends StatefulWidget {
   final Employee? editEmployee;
 
@@ -225,9 +222,6 @@ class _EmployeeFormScreenState extends State<EmployeeFormScreen> {
     );
   }
 
-  /// Country list comes from GET /country. The currently selected
-  /// value is folded into the item list so edit mode never crashes
-  /// on a country the API didn't return.
   Widget _buildCountryDropdown(bool isDark) {
     return Consumer<EmployeeProvider>(
       builder: (context, provider, _) {

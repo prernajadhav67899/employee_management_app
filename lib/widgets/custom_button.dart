@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sizes.dart';
 
-
-/// Reusable primary/secondary button with a built-in loading spinner.
-/// Used on every submit action (login, register, save employee...).
 class CustomButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;

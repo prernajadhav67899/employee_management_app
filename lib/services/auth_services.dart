@@ -1,9 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-/// Wraps FirebaseAuth + Google Sign-In. Throws [AuthException]
-/// with human-readable messages so the UI never sees a raw
-/// FirebaseAuthException code.
 class AuthException implements Exception {
   final String message;
   const AuthException(this.message);
@@ -19,7 +16,6 @@ class AuthService {
 
   static bool _googleReady = false;
 
-  /// google_sign_in v7 requires initialize() exactly once before use.
   static Future<void> initGoogle() async {
     if (_googleReady) return;
     await GoogleSignIn.instance.initialize();
@@ -64,8 +60,6 @@ class AuthService {
     }
   }
 
-  /// google_sign_in v7: authenticate() replaces signIn(), and
-  /// `authentication` is a synchronous getter.
   Future<User> signInWithGoogle() async {
     try {
       await initGoogle();

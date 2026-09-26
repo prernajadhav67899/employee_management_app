@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sizes.dart';
 
-/// Reusable text field used across auth forms and the employee form.
-/// Handles obscure-text toggling for password fields and shows
-/// validation errors via [validator] + Form's autovalidateMode.
 class CustomTextField extends StatefulWidget {
   final TextEditingController controller;
   final String label;

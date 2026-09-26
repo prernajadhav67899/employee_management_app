@@ -5,7 +5,6 @@ import '../constants/app_icons.dart';
 import '../constants/app_sizes.dart';
 import 'custom_button.dart';
 
-/// Shown when an API/Firebase call fails, with a retry action.
 class ErrorWidgetView extends StatelessWidget {
   final String message;
   final VoidCallback? onRetry;

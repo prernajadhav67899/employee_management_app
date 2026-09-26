@@ -6,7 +6,6 @@ import 'package:employee_management_app/constants/api_constant.dart';
 import 'package:http/http.dart' as http;
 
 
-/// Typed error so screens can show a real message.
 class ApiException implements Exception {
   final String message;
   final int? statusCode;
@@ -16,8 +15,6 @@ class ApiException implements Exception {
   String toString() => message;
 }
 
-/// Thin wrapper over http. The [client] is injectable so tests
-/// can pass a MockClient instead of hitting the network.
 class ApiClient {
   final http.Client _client;
 

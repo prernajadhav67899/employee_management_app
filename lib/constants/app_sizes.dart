@@ -1,6 +1,3 @@
-/// Spacing, radius and icon-size constants.
-/// Keeps every screen's padding/margins consistent and makes a
-/// global density change a one-line edit.
 class AppSizes {
   AppSizes._();
 

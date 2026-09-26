@@ -1,8 +1,3 @@
-/// Employee model, matching the fields returned by
-/// GET /api/v1/employee (verified against the live mockapi.io response).
-/// Note: the API returns both `email` and `emailId` — `email` is used
-/// as the primary field per the assignment spec; `emailId` is kept
-/// only in case a screen needs to display it.
 class Employee {
   final String id;
   final String name;
@@ -40,8 +35,6 @@ class Employee {
     );
   }
 
-  /// Body for POST/PUT calls. `id` and `createdAt` are omitted since
-  /// mockapi.io assigns/manages those itself.
   Map<String, dynamic> toJson() {
     return {
       'name': name,
